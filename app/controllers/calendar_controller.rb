@@ -48,15 +48,19 @@ class CalendarController < ApplicationController
   end
 
   def ical
-  	@ical = Array.new
+  	 @ical = Array.new
       buffer = recup_content
       @ical << create_event_ical(buffer)
-      ical = create_event_ical(buffer)
       File.open('calendar.ics', 'w') do |filea|
         @ical.each do |line|
           filea.puts line
         end
       end
-      return ical
+  end
+
+  def calendar
+    render :layout => false
+    buffer = recup_content
+    @calendar = create_event_ical(buffer)
   end
 end
