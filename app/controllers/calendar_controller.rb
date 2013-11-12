@@ -62,5 +62,8 @@ class CalendarController < ApplicationController
     render :layout => false
     buffer = recup_content
     @calendar = create_event_ical(buffer)
+    logger.debug '=' *77
+    logger.debug @calendar
+    logger.debug '=' *77
   end
 end
