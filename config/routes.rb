@@ -1,7 +1,10 @@
 Ical::Application.routes.draw do
   root 'calendar#index'
+
   match '/ical', to: 'calendar#ical', via: 'get'
-  match '/calendar', to: 'calendar#calendar', via: 'get'
+  get '/calendar' => 'calendar#calendar'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
