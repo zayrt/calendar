@@ -60,8 +60,8 @@ class CalendarController < ApplicationController
 
   def calendar
     buffer = recup_content
-    @calendar = create_event_ical(buffer)
-    
+    @calendar = create_event_rical(buffer)
+
     render :layout => false
   end
 end
