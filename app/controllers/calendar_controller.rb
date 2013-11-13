@@ -25,6 +25,9 @@ class CalendarController < ApplicationController
             event.summary     = line[0]
             event.dtstart     = Time.parse(line[1]).getutc
             event.dtend       = Time.parse(line[2]).getutc
+            event.alarm do
+              description "Don't forget " + line[0] + " : " + line[1] + " to " + line[2]
+            end
           end
         end
         end
@@ -50,7 +53,7 @@ class CalendarController < ApplicationController
   def ical
   	 @ical = Array.new
       buffer = recup_content
-      @ical << create_event_ical(buffer)
+      @ical << create_event_rical(buffer)
       File.open('calendar.ics', 'w') do |filea|
         @ical.each do |line|
           filea.puts line
@@ -61,7 +64,6 @@ class CalendarController < ApplicationController
   def calendar
     buffer = recup_content
     @calendar = create_event_rical(buffer)
-
     render :layout => false
   end
 end
