@@ -18,7 +18,7 @@ class CalendarController < ApplicationController
   end
 
   def create_event_rical(buffer)
-      cal = RiCal.Calendar do |cal|
+        cal = RiCal.Calendar |cal|
         buffer.each do |line|
           if !line.empty?
           cal.event do |event|
@@ -30,8 +30,8 @@ class CalendarController < ApplicationController
             end
           end
         end
-        end
       end
+    end
     return cal
   end
 

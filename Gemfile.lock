@@ -42,8 +42,6 @@ GEM
     html2slim (0.0.4)
       hpricot
     i18n (0.6.5)
-    ical (0.0.13)
-    icalendar (1.4.4)
     jbuilder (1.5.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -119,8 +117,6 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   html2slim
-  ical
-  icalendar
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.0)
